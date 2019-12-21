@@ -1,4 +1,4 @@
-# br
+# vue-socket-chat
 
 ## Project setup
 ```

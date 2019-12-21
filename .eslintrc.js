@@ -3,15 +3,23 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   extends: [
     'plugin:vue/essential',
     '@vue/airbnb',
   ],
   rules: {
+    // common
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'max-len': [
+      'error',
+      120,
+      2,
+      { ignoreUrls: true }
+      ],
+    // vue
     'vue/order-in-components': ['error', {
       order: [
         'el',
@@ -31,9 +39,9 @@ module.exports = {
         'computed',
         'methods',
         ['template', 'render'],
-        'renderError'
-      ]
-    }]
+        'renderError',
+      ],
+    }],
   },
   parserOptions: {
     parser: 'babel-eslint',

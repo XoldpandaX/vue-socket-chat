@@ -22,7 +22,6 @@ module.exports = {
     // vue
     'vue/order-in-components': ['error', {
       order: [
-        'el',
         'name',
         'parent',
         'functional',

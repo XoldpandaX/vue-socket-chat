@@ -17,3 +17,14 @@ export const CHAT_MESSAGE_TYPES = {
 };
 
 export const SOCKET_ENDPOINT = 'ws://pm.tada.team/ws';
+
+export const ROUTES = {
+  HOME: {
+    PATH: '/',
+    NAME: 'home',
+  },
+  CHAT: {
+    PATH: '/chat',
+    NAME: 'chat',
+  },
+};

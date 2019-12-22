@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { ROUTES } from '@/constants';
+
 import { HomePage } from '@/views/home-page';
 import { ChatPage } from '@/views/chat-page';
 
@@ -7,13 +9,13 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: ROUTES.HOME.PATH,
+    name: ROUTES.HOME.NAME,
     component: HomePage,
   },
   {
-    path: '/chat',
-    name: 'chat',
+    path: ROUTES.CHAT.PATH,
+    name: ROUTES.CHAT.NAME,
     component: ChatPage,
   },
 ];

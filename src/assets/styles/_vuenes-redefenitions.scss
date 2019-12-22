@@ -1,0 +1,12 @@
+// vue-nes package styles redefinitions
+#app {
+  .nes-balloon {
+    padding: .5rem 1rem;
+  }
+
+  .nes-avatar.is-large {
+    width: 70px;
+    height: 70px;
+    image-rendering: pixelated;
+  }
+}

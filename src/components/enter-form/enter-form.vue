@@ -1,8 +1,9 @@
 <template>
   <form
     class="enter-form"
-    @submit.prevent="$emit('form-submitted', userName)"
+    @submit.prevent="sendUserName"
   >
+    <avatar-chooser @avatar-chosen="setAvatar" />
     <nes-input-text
       id="name"
       placeholder="your name is ..."
@@ -11,29 +12,47 @@
     />
     <nes-button
       :primary="true"
-      :disabled="isButtonEnable"
+      :disabled="!isSubmitEnable"
+      @click="sendUserName"
     >
-      Enter
+      Enter chat
     </nes-button>
   </form>
 </template>
 
 <script>
+import { AvatarChooser } from '@/components/avatar-chooser';
+
 export default {
   name: 'enter-form',
+  components: {
+    AvatarChooser,
+  },
   data() {
     return {
       userName: '',
+      userAvatar: 'image2', // avatar by default
     };
   },
   computed: {
-    isButtonEnable() {
-      return !this.userName.length;
+    isSubmitEnable() {
+      return this.userName.length >= 2;
     },
   },
   methods: {
+    sendUserName() {
+      if (this.isSubmitEnable) {
+        this.$emit('form-submitted', {
+          name: this.userName,
+          avatar: this.userAvatar,
+        });
+      }
+    },
     changeUserName(userName) {
       this.userName = userName;
+    },
+    setAvatar(avatarId) {
+      this.userAvatar = avatarId;
     },
   },
 };

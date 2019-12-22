@@ -1,30 +1,27 @@
-import image1 from '@/assets/images/avatar1.jpg';
-import image2 from '@/assets/images/avatar2.png';
-import image3 from '@/assets/images/avatar3.jpg';
-import image4 from '@/assets/images/avatar4.jpg';
+import { CHAT_AVATARS } from '@/constants';
 
 export default [
   {
     id: 'image1',
-    image: image1,
+    image: CHAT_AVATARS.image1,
     imagePath: '',
     isSelect: false,
   },
   {
     id: 'image2',
-    image: image3,
+    image: CHAT_AVATARS.image2,
     imagePath: '',
     isSelect: false,
   },
   {
     id: 'image3',
-    image: image2,
+    image: CHAT_AVATARS.image3,
     imagePath: '',
     isSelect: false,
   },
   {
     id: 'image4',
-    image: image4,
+    image: CHAT_AVATARS.image4,
     imagePath: '',
     isSelect: false,
   },

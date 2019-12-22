@@ -1,0 +1,9 @@
+.chat-text-area {
+  position: relative;
+
+  &-send-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

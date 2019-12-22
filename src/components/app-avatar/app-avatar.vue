@@ -1,11 +1,12 @@
 <template>
   <div
-    class="app-avatar"
+    :class="rootClasses"
     @click="clickHandler"
   >
     <nes-avatar
       alt="user avatar"
-      :large="true"
+      :large="large"
+      :medium="medium"
       :rounded="isRounded"
       :src="src"
     />
@@ -18,10 +19,18 @@ import VueTypes from 'vue-types';
 export default {
   name: 'app-avatar',
   props: {
-    id: VueTypes.string.isRequired,
+    id: VueTypes.string,
     src: VueTypes.string.isRequired,
+    classes: VueTypes.array.def([]),
     hasAction: VueTypes.bool.def(false),
     isRounded: VueTypes.bool.def(false),
+    medium: VueTypes.bool.def(false),
+    large: VueTypes.bool.def(false),
+  },
+  computed: {
+    rootClasses() {
+      return ['app-avatar', ...this.classes];
+    },
   },
   methods: {
     clickHandler() {
@@ -32,7 +41,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>

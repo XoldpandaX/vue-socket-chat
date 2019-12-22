@@ -14,7 +14,7 @@ export default {
 @import "assets/styles/index";
 
 #app {
-  padding: 20px 8% 0 8%;
+  padding: 20px 15% 0 15%;
   text-align: center;
   color: #2c3e50;
 }

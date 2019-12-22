@@ -9,4 +9,20 @@
     height: 70px;
     image-rendering: pixelated;
   }
+
+  .nes-avatar.is-medium {
+    width: 50px;
+    height: 50px;
+    image-rendering: pixelated;
+  }
+
+  .nes-container {
+    padding: 1.5rem 2rem;
+  }
+
+  .nes-textarea {
+    height: 65px;
+    padding-right: 135px;
+    resize: none;
+  }
 }

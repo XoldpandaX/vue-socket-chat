@@ -10,4 +10,10 @@ export const CHAT_AVATARS = {
   image4,
 };
 
+export const CHAT_MESSAGE_TYPES = {
+  SYSTEM: 'system',
+  USER: 'user',
+  REGISTERED_USER: 'registered',
+};
+
 export const SOCKET_ENDPOINT = 'ws://pm.tada.team/ws';

@@ -1,0 +1,12 @@
+.system-chat-message {
+  padding: 2px 35px;
+  margin: 0 0 20px 0;
+
+  &--success {
+    background-color: #92cc41;
+  }
+
+  &--alert {
+    background-color: #e76e55;
+  }
+}

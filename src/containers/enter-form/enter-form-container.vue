@@ -21,13 +21,13 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('auth', ['userName', 'userAvatar']),
+    ...mapGetters('chat-socket', ['userName', 'userAvatar']),
   },
   methods: {
-    ...mapActions('auth', ['registerUser']),
+    ...mapActions('chat-socket', ['registerUserInChat']),
 
     async handleFormSubmit({ name, avatar }) {
-      await this.registerUser({ name, avatar });
+      await this.registerUserInChat({ name, avatar });
       this.connectToChat(name);
       await this.$router.push({ name: 'chat' });
     },

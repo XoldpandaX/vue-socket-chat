@@ -1,0 +1,11 @@
+.chat-message {
+  display: flex;
+
+  &-avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}

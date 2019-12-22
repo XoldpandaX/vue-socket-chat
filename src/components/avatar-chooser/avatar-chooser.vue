@@ -11,6 +11,7 @@
           :id="item.id"
           :src="item.image"
           :hasAction="true"
+          :large="true"
           @click-avatar="handleAvatarClick"
         />
       </div>

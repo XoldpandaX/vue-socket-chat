@@ -1,25 +1,25 @@
 <template>
-  <nes-container
-    title="Holy pixel chat :)"
-    :form="true"
-    :center="true"
-  >
-    <chat-balloon side="left">
-      hello from nes framework
-    </chat-balloon>
-    <chat-balloon side="right">
-      hello from nes framework
-    </chat-balloon>
-  </nes-container>
+  <div class="chat-page">
+    <div class="chat">
+      <chat-messages-container />
+      <input-message-container />
+    </div>
+  </div>
 </template>
 
 <script>
-import { ChatBalloon } from '@/components/chat-baloon';
+import { ChatMessagesContainer } from '@/containers/messages';
+import { InputMessageContainer } from '@/containers/input-message';
 
 export default {
   name: 'chat-page',
   components: {
-    ChatBalloon,
+    ChatMessagesContainer,
+    InputMessageContainer,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  @import 'chat-page';
+</style>

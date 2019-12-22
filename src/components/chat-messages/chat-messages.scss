@@ -1,0 +1,20 @@
+.chat-messages {
+
+  &-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-el {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-el-wrapper {
+    display: flex;
+
+    &-right {
+      justify-content: flex-end;
+    }
+  }
+}

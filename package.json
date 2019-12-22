@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "core-js": "^3.4.3",
+    "lodash.get": "^4.4.2",
     "vue": "^2.6.10",
     "vue-native-websocket": "^2.0.13",
     "vue-router": "^3.1.3",
+    "vue-types": "^1.7.0",
+    "vuenes.css": "^2.1.0",
     "vuex": "^3.1.2"
   },
   "devDependencies": {

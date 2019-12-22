@@ -1,9 +1,14 @@
 import * as mutationTypes from './mutation-types';
+import { onMessageMapper } from './mappers';
 
 export default {
+  [mutationTypes.SET_USER](state, { userName, userAvatar }) {
+    state.userName = userName;
+    state.userAvatar = userAvatar;
+  },
   [mutationTypes.SOCKET_ONMESSAGE](state, msg) {
-    console.log(msg);
-    console.info(`${msg} on message`);
+    const receivedMsg = onMessageMapper(msg, state.userAvatar, state.userName);
+    state.chatMessages = [...state.chatMessages, receivedMsg];
   },
   [mutationTypes.SOCKET_ONOPEN](state, msg) {
     console.log(msg);

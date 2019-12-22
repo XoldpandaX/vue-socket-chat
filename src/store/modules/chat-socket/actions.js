@@ -1,5 +1,10 @@
+import * as mutationTypes from './mutation-types';
+
 export default {
-  initHomePageContent({ commit }, msg) {
-    console.info(`send ${msg}`, commit);
+  registerUserInChat({ commit }, { name, avatar }) {
+    commit(mutationTypes.SET_USER, {
+      userName: name,
+      userAvatar: avatar,
+    });
   },
 };

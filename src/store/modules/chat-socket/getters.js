@@ -1,3 +1,5 @@
 export default {
-  test: ({ test }) => test,
+  chatMessages: ({ chatMessages }) => chatMessages,
+  userName: ({ userName }) => userName,
+  userAvatar: ({ userAvatar }) => userAvatar,
 };

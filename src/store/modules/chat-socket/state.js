@@ -1,3 +1,5 @@
 export default {
-  test: [],
+  userName: '',
+  userAvatar: '',
+  chatMessages: [],
 };

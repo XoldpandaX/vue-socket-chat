@@ -15,6 +15,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'import/prefer-default-export': 'off',
     'max-len': ['error', 120, 2, { ignoreUrls: true }],
+    'arrow-parens': 0,
     // vue
     'vue/order-in-components': ['error', {
       order: [

@@ -1,10 +1,21 @@
 import Vue from 'vue';
-import App from './App.vue';
 import router from './router';
-import store from './store';
+import createStore from '@/store';
+import installVueNativeWebsocket from '@/plugins/vue-native-websocket';
+import * as mutationTypes from '@/store/modules/chat-socket/mutation-types';
+import { SOCKET_ENDPOINT } from './constants';
+
+import App from './App.vue';
+
+const store = createStore();
+installVueNativeWebsocket({
+  store,
+  mutationTypes,
+  endpoint: SOCKET_ENDPOINT,
+  moduleName: 'chat-socket',
+});
 
 Vue.config.productionTip = false;
-
 new Vue({
   router,
   store,

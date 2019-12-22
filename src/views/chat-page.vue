@@ -39,7 +39,7 @@ import image2 from '@/assets/images/avatar2.png';
 import image3 from '@/assets/images/avatar3.jpg';
 
 export default {
-  name: 'chat',
+  name: 'chat-page',
   components: {
     ChatBalloon,
   },

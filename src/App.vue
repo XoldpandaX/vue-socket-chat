@@ -12,22 +12,10 @@ export default {
 
 <style lang="scss">
 @import "assets/styles/index";
+
 #app {
-  padding: 20px 5% 0 5%;
+  padding: 20px 8% 0 8%;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>

@@ -4,17 +4,17 @@
       Please enter you name<br/>
       and choose avatar to enter chat ...
     </h1>
-    <pre-chat-container />
+    <enter-form-container />
   </div>
 </template>
 
 <script>
-import { PreChatContainer } from '@/containers/pre-chat';
+import { EnterFormContainer } from '@/containers/enter-form';
 
 export default {
   name: 'home-page',
   components: {
-    PreChatContainer,
+    EnterFormContainer,
   },
 };
 </script>

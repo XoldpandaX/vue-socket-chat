@@ -2,7 +2,7 @@ import Vue from 'vue';
 import router from './router';
 import createStore from '@/store';
 import * as mutationTypes from '@/store/modules/chat-socket/mutation-types';
-import { SOCKET_ENDPOINT } from './constants';
+import { SOCKET_ENDPOINT, ROUTES } from './constants';
 
 // plugins
 import installVueNativeWebsocket from '@/plugins/vue-native-websocket';
@@ -18,6 +18,16 @@ installVueNativeWebsocket({
   moduleName: 'chat-socket',
 });
 installVueNesCss();
+
+router.beforeEach((to, from, next) => {
+  const userName = store.getters['chat-socket/userName'];
+
+  if (to.name === ROUTES.CHAT.NAME && !userName) {
+    next({ name: ROUTES.HOME.NAME });
+  } else {
+    next();
+  }
+});
 
 Vue.config.productionTip = false;
 new Vue({

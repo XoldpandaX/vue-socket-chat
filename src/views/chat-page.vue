@@ -10,7 +10,6 @@
     <chat-balloon side="right">
       hello from nes framework
     </chat-balloon>
-    <button @click="connect">click to connect</button>
   </nes-container>
 </template>
 
@@ -21,12 +20,6 @@ export default {
   name: 'chat-page',
   components: {
     ChatBalloon,
-  },
-  methods: {
-    connect() {
-      this.$connect('ws://pm.tada.team/ws?name=denis24');
-      console.info('sfs');
-    },
   },
 };
 </script>

@@ -1,12 +1,18 @@
 <template>
   <div id="app">
     <router-view/>
+    <socket-error-container />
   </div>
 </template>
 
 <script>
+import { SocketErrorContainer } from '@/containers/socket-error';
+
 export default {
   name: 'App',
+  components: {
+    SocketErrorContainer,
+  },
 };
 </script>
 

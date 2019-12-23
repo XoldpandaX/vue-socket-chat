@@ -1,6 +1,7 @@
 # vue-socket-chat
 
 ![Выделение_004](https://user-images.githubusercontent.com/24750682/71343461-7e249100-2592-11ea-980e-e60b753dc8fe.png)
+![Выделение_005](https://user-images.githubusercontent.com/24750682/71343536-b6c46a80-2592-11ea-9a3f-d105967f039a.png)
 
 ## What all this about ?
 It is a simple chat realization created with vue.js + vue-native-websocket

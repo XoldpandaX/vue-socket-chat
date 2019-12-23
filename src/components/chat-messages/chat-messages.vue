@@ -11,9 +11,10 @@
     >
       <div :class="['chat-messages-el-wrapper', getBalloonClassByPosition(item)]">
         <chat-message
-          v-if="!isSystemMsg(item)"
+          v-if="!getIsSystemMsgStatus(item)"
           :side="getMsgPositionByType(item)"
           :avatar="item.avatar"
+          :is-auth-user-msg="getIsAuthUserMsgStatus(item)"
         >
           {{ item.text }}
         </chat-message>
@@ -42,12 +43,17 @@ export default {
   },
   props: {
     messages: VueTypes.arrayOf(VueTypes.object).isRequired,
+    authUserName: VueTypes.string.isRequired,
   },
   updated() {
     this.scrollToBottom();
   },
   methods: {
-    isSystemMsg(item) {
+    getIsAuthUserMsgStatus(item) {
+      console.info(item.name === this.authUserName);
+      return item.name === this.authUserName;
+    },
+    getIsSystemMsgStatus(item) {
       return item.type === CHAT_MESSAGE_TYPES.SYSTEM;
     },
     getBalloonClassByPosition(msg) {

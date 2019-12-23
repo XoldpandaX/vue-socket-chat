@@ -7,6 +7,7 @@
   >
     <chat-messages
       :messages="chatMessages"
+      :auth-user-name="userName"
     />
   </nes-container>
 </template>
@@ -22,8 +23,7 @@ export default {
     ChatMessages,
   },
   computed: {
-    ...mapGetters('chat-socket', ['chatMessages']),
-    ...mapGetters('auth', ['userName', 'userAvatar']),
+    ...mapGetters('chat-socket', ['chatMessages', 'userName']),
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-message">
+  <div :class="rootClasses">
     <app-avatar
       :classes="['chat-message-avatar']"
       :src="avatar"
@@ -27,6 +27,13 @@ export default {
   props: {
     side: VueTypes.string.isRequired,
     avatar: VueTypes.string.isRequired,
+    isAuthUserMsg: VueTypes.bool.def(false),
+  },
+  computed: {
+    rootClasses() {
+      const base = 'chat-message';
+      return [base, this.isAuthUserMsg && `${base}--auth-user`];
+    },
   },
 };
 </script>

@@ -7,4 +7,7 @@ export default {
       userAvatar: avatar,
     });
   },
+  resetSocketState({ commit }) {
+    commit(mutationTypes.RESET_SOCKET_STATE);
+  },
 };

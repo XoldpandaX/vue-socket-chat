@@ -23,7 +23,7 @@ export default function (socketEvent = {}, registeredUserAvatar, registeredUserN
     avatar: (
       parsedData.name === registeredUserName
         ? CHAT_AVATARS[registeredUserAvatar]
-        : CHAT_AVATARS.image4
+        : CHAT_AVATARS.image5
     ),
   });
 

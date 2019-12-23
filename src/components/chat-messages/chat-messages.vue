@@ -1,12 +1,15 @@
 <template>
-  <div class="chat-messages">
+  <div
+    class="chat-messages"
+    ref="chatMessages"
+  >
     <app-list
       class="chat-messages-list"
       v-slot="{ item }"
       :list-items="messages"
       :items-classes="['chat-messages-list-el']"
     >
-      <div :class="['chat-messages-el-wrapper', getBalloonClassByType(item)]">
+      <div :class="['chat-messages-el-wrapper', getBalloonClassByPosition(item)]">
         <chat-message
           v-if="!isSystemMsg(item)"
           :side="getMsgPositionByType(item)"
@@ -40,23 +43,34 @@ export default {
   props: {
     messages: VueTypes.arrayOf(VueTypes.object).isRequired,
   },
+  updated() {
+    this.scrollToBottom();
+  },
   methods: {
     isSystemMsg(item) {
       return item.type === CHAT_MESSAGE_TYPES.SYSTEM;
     },
-    getBalloonClassByType(msg) {
-      return this.getMsgPositionByType(msg) === 'right'
-        ? 'chat-messages-el-wrapper-right'
-        : '';
+    getBalloonClassByPosition(msg) {
+      const position = this.getMsgPositionByType(msg);
+      const classBase = 'chat-messages-el-wrapper';
+
+      if (position === 'center') {
+        return `${classBase}--center`;
+      }
+
+      return this.getMsgPositionByType(msg) === 'right' ? `${classBase}--right` : '';
     },
     getMsgPositionByType(msg) {
       const sidesByType = {
         [CHAT_MESSAGE_TYPES.USER]: 'left',
-        [CHAT_MESSAGE_TYPES.SYSTEM]: 'left',
+        [CHAT_MESSAGE_TYPES.SYSTEM]: 'center',
         [CHAT_MESSAGE_TYPES.REGISTERED_USER]: 'right',
       };
 
       return sidesByType[msg.type] || '';
+    },
+    scrollToBottom() {
+      this.$refs.chatMessages.scrollTop = this.$refs.chatMessages.scrollHeight;
     },
   },
 };

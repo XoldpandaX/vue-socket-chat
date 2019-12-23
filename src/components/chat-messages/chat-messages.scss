@@ -1,4 +1,7 @@
 .chat-messages {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
 
   &-list {
     list-style: none;
@@ -13,7 +16,11 @@
   &-el-wrapper {
     display: flex;
 
-    &-right {
+    &--center {
+      justify-content: center;
+    }
+
+    &--right {
       justify-content: flex-end;
     }
   }

@@ -1,5 +1,7 @@
 # vue-socket-chat
 
+![alt text](https://ibb.co/3kQ8yZY)
+
 ## What all this about ?
 It is a simple chat realization created with vue.js + vue-native-websocket
 It is a demo for now, so i highly recommend to watch this example only in

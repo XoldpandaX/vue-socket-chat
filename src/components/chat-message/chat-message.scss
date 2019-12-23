@@ -13,13 +13,22 @@
 
   &-extra {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    //justify-content: flex-end;
     align-items: center;
     font-size: 12px;
     color: green;
+
+    &-auth {
+      justify-content: flex-end;
+    }
   }
 
   &--auth-user-wrapper {
     flex-direction: row-reverse;
+  }
+
+  &--common-user-wrapper {
+    flex-direction: row;
   }
 }

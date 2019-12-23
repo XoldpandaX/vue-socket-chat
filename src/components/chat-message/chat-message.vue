@@ -1,6 +1,6 @@
 <template>
   <div class="chat-message">
-    <div :class="wrapperClass">
+    <div :class="wrapperClasses">
       <app-avatar
         :classes="['chat-message-avatar']"
         :src="avatar"
@@ -12,6 +12,7 @@
       </chat-balloon>
     </div>
     <extra-info
+      :class="extraInfoClass"
       :name="extra.name"
       :created="extra.created"
     />
@@ -42,9 +43,16 @@ export default {
     }).isRequired,
   },
   computed: {
-    wrapperClass() {
+    wrapperClasses() {
       const base = 'chat-message';
-      return [base, this.isAuthUserMsg && `${base}--auth-user-wrapper`];
+      return [
+        base,
+        `${base}--${this.isAuthUserMsg ? 'auth' : 'common'}-user-wrapper`,
+      ];
+    },
+    extraInfoClass() {
+      const base = 'chat-message-extra';
+      return this.isAuthUserMsg ? [base, `${base}-auth`] : `${base}`;
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-message-extra">
+  <div>
     <span class="m-r-s">{{ name }}</span>
     (<span>{{ created }}</span>)
   </div>

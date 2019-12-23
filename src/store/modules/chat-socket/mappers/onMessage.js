@@ -2,7 +2,7 @@ import get from 'lodash.get';
 import dayjs from 'dayjs';
 import { CHAT_MESSAGE_TYPES, CHAT_AVATARS } from '@/constants';
 
-const getHumanDate = (date = '') => dayjs(date).format('DD-MM-YYYY HH:mm');
+const getHumanDate = (date = '') => dayjs(date).format('HH:mm');
 
 export default function (socketEvent = {}, registeredUserAvatar, registeredUserName) {
   const handleSystemMsg = (parsedData) => ({

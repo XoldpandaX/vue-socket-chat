@@ -17,7 +17,7 @@ export default {
     ChatTextArea,
   },
   computed: {
-    ...mapGetters('chat-socket', ['userName', 'userAvatar']),
+    ...mapGetters('chat-socket', ['userName']),
   },
   methods: {
     sendMessage(text) {

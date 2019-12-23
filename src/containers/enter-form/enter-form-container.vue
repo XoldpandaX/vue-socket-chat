@@ -28,7 +28,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters('chat-socket', ['userName', 'userAvatar', 'isSocketOpen']),
+    ...mapGetters('chat-socket', ['isSocketOpen']),
   },
   methods: {
     ...mapActions('chat-socket', ['registerUserInChat']),

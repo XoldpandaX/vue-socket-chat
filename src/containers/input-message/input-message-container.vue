@@ -1,5 +1,8 @@
 <template>
-  <chat-text-area @submit-btn-click="sendMessage"/>
+  <chat-text-area
+    @submit-btn-click="sendMessage"
+    initValue=""
+  />
 </template>
 
 <script>

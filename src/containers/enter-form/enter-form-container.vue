@@ -20,19 +20,22 @@ export default {
       chosenAvatar: '',
     };
   },
+  watch: {
+    async isSocketOpen(val) {
+      if (val) {
+        await this.$router.push({ name: 'chat' });
+      }
+    },
+  },
   computed: {
-    ...mapGetters('chat-socket', ['userName', 'userAvatar']),
+    ...mapGetters('chat-socket', ['userName', 'userAvatar', 'isSocketOpen']),
   },
   methods: {
     ...mapActions('chat-socket', ['registerUserInChat']),
 
     async handleFormSubmit({ name, avatar }) {
       await this.registerUserInChat({ name, avatar });
-      this.connectToChat(name);
-      await this.$router.push({ name: 'chat' });
-    },
-    connectToChat(userName) {
-      this.$connect(`${SOCKET_ENDPOINT}?name=${userName}`);
+      this.$connect(`${SOCKET_ENDPOINT}?name=${name}`);
     },
   },
 };

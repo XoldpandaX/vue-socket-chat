@@ -13,11 +13,13 @@ requireModule.keys().forEach((fileName) => {
   }
 
   const moduleName = fileName.replace(/(\.\/|\/index.js)/g, '');
-
-  modules[moduleName] = {
-    namespaced: true,
-    ...requireModule(fileName).default,
-  };
+  // Disallow register mappers folder into store module
+  if (!moduleName.includes('/mappers')) {
+    modules[moduleName] = {
+      namespaced: true,
+      ...requireModule(fileName).default,
+    };
+  }
 });
 
 export default modules;

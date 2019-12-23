@@ -9,8 +9,7 @@ export default {
   [mutationTypes.SOCKET_ONOPEN](state) {
     state.isSocketOpen = true;
   },
-  [mutationTypes.SOCKET_ONERROR](state, msg) {
-    console.info(msg);
+  [mutationTypes.SOCKET_ONERROR](state) {
     state.isSocketError = true;
   },
   [mutationTypes.SOCKET_ONCLOSE](state) {

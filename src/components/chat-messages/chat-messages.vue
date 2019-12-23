@@ -15,6 +15,7 @@
           :side="getMsgPositionByType(item)"
           :avatar="item.avatar"
           :is-auth-user-msg="getIsAuthUserMsgStatus(item)"
+          :extra="getExtraData(item)"
         >
           {{ item.text }}
         </chat-message>
@@ -49,11 +50,11 @@ export default {
     this.scrollToBottom();
   },
   methods: {
-    getIsAuthUserMsgStatus(item) {
-      return item.name === this.authUserName;
+    getIsAuthUserMsgStatus(msg) {
+      return msg.name === this.authUserName;
     },
-    getIsSystemMsgStatus(item) {
-      return item.type === CHAT_MESSAGE_TYPES.SYSTEM;
+    getIsSystemMsgStatus(msg) {
+      return msg.type === CHAT_MESSAGE_TYPES.SYSTEM;
     },
     getBalloonClassByPosition(msg) {
       const position = this.getMsgPositionByType(msg);
@@ -73,6 +74,9 @@ export default {
       };
 
       return sidesByType[msg.type] || '';
+    },
+    getExtraData({ name, created }) {
+      return { name, created };
     },
     scrollToBottom() {
       this.$refs.chatMessages.scrollTop = this.$refs.chatMessages.scrollHeight;

@@ -1,5 +1,10 @@
 # vue-socket-chat
 
+## What all this about ?
+It is a simple chat realization created with vue.js + vue-native-websocket
+It is a demo for now, so i highly recommend to watch this example only in
+last versions of google-chrome
+
 ## Project setup
 ```
 yarn install
@@ -19,6 +24,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

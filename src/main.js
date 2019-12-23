@@ -19,14 +19,20 @@ installVueNativeWebsocket({
 });
 installVueNesCss();
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   const userName = store.getters['chat-socket/userName'];
+
+  if (from.name === ROUTES.CHAT.NAME) {
+    await store.dispatch('chat-socket/resetSocketState');
+    Vue.prototype.$disconnect();
+    next();
+  }
 
   if (to.name === ROUTES.CHAT.NAME && !userName) {
     next({ name: ROUTES.HOME.NAME });
-  } else {
-    next();
   }
+
+  next();
 });
 
 Vue.config.productionTip = false;

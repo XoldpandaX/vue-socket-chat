@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     getIsAuthUserMsgStatus(item) {
-      console.info(item.name === this.authUserName);
       return item.name === this.authUserName;
     },
     getIsSystemMsgStatus(item) {
